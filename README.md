@@ -1,7 +1,7 @@
 ## Setup
 ```sh
 snap install ./scapy_2.4.5_amd64.snap --dangerous
-snap connect scapy:network-control :network-control
+snap connect scapy:network-control
 sudo scapy
 ```
 
