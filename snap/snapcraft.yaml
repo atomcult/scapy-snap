@@ -1,0 +1,32 @@
+name: scapy
+base: core22
+version: '2.4.5'
+summary: A powerful Python-based interactive packet manipulation program and library.
+description: |
+  This is my-snap's description. You have a paragraph or two to tell the
+  most important story about your snap. Keep it under 100 words though,
+  we live in tweetspace and your description wants to look good in the snap
+  store.
+
+grade: stable
+confinement: strict
+
+parts:
+  scapy:
+    plugin: python
+    python-packages:
+      - ipython      # Optional, but recommended
+      # - bpython    # Optional; alternative to iPython
+      - matplotlib   # Optional
+      - cryptography # Optional
+      - PyX          # Optional
+    source: https://github.com/secdev/scapy/archive/refs/tags/v2.4.5.tar.gz
+
+apps:
+  scapy:
+    command: bin/scapy
+    plugs:
+      - network
+      - network-bind
+      - network-control
+
